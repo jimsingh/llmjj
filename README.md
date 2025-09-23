@@ -26,22 +26,18 @@ equally correct answers.
 
 ### Rating Guidelines:
 - **3 (Fully Meets):** the document fully and unambiguously meets the user need.  
-  *Example:*  
-  Query: *What is the capital of France?*  
-  Answer: *Paris*
+  - Query: *What is the capital of France?*  
+    Answer: *Paris*
 
 - **2 (Meets):** the document meets the user need, but there are other equally good answers.  
-  *Example:*  
-  Query: *Quarterly report*  
-  Answer: *2025 Q2 Quarterly Report, 2025 Q1 Quarterly Report*
+  - Query: *Quarterly report*  
+    Answer: *2025 Q2 Quarterly Report, 2025 Q1 Quarterly Report*
 
 - **1 (Related):** the document is related to the query, but does not directly address the information need.  
-  *Example:*  
-  Query: *Quarterly report*  
-  Answer: *2024 Annual Report, 2025 Q2 Budget Doc*
+  - Query: *Quarterly report*  
+    Answer: *2024 Annual Report, 2025 Q2 Budget Doc*
 
 - **0 (Off-topic):** the document does not seem relevant to the query at all, even if some terms overlap.  
-  *Examples:*  
   - Query: *Quarterly report*  
     Answer: *Employee Holiday Party Agenda*  
   - Query: *Python pandas rolling volatility*  
