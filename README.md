@@ -124,11 +124,14 @@ programmatically:
 I [analyzed](notebooks/msmarco_relevance.ipynb) MS MARCO v2.1 by calculating an entailment
 score between the answer and passages.
 
-| Group                    | Count | Median  | Mean    | Std Dev  |
-|---------------------------|-------|---------|---------|----------|
-| Answered                  | 4,941 | 0.3674  | 0.4224  | 0.2140   |
-| Answered and Well Formed  | 1,527 | 0.3914  | 0.4343  | 0.1999   |
-| Not Selected              | 53,903| 0.0398  | 0.0612  | 0.0647   |
+| Group                  | Count  | Median  | Mean    | Std Dev  |
+|-------------------------|--------|---------|---------|----------|
+| Answered               | 45,533 | 0.0486  | 0.1002  | 0.1457   |
+| Answered Not Selected  | 40,592 | 0.0400  | 0.0609  | 0.0637   |
+| Answered Selected       | 4,941 | 0.3674  | 0.4224  | 0.2140   |
+| Not Selected           | 53,903 | 0.0398  | 0.0612  | 0.0647   |
+| Well Formed            | 14,838 | 0.0477  | 0.1004  | 0.1449   |
+| Well Formed Selected    | 1,527 | 0.3914  | 0.4343  | 0.1999   |
 
 ![violin plot](assets/msmarco_score_distribution.png)
 
