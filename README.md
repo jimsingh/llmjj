@@ -114,9 +114,25 @@ I considered 30 other examples and landed at this heuristic for query / doc scor
 programmatically:
 ```
     query, answer, wellFormed, passage := MS MARCO:
-    if answers and wellFormedAnswers: return 3
-    if answers and not wellFormedAnswers:
+    if answers:
         return 3 if nli(answer, passage) > 0.7 else 2
     if not answers and not wellFormedAnswers:
-        return 1 if cosine_sim(query, passage) > 0.7 else 0
+        return 1 if nil(query, passage) > 0.35 else 0
 ```
+
+## Analysis of MS MARCO answer / passage entailment
+I [analyzed](notebooks/msmarco_relevance.ipynb) MS MARCO v2.1 by calculating an entailment
+score between the answer and passages.
+
+| Group                    | Count | Median  | Mean    | Std Dev  |
+|---------------------------|-------|---------|---------|----------|
+| Answered                  | 4,941 | 0.3674  | 0.4224  | 0.2140   |
+| Answered and Well Formed  | 1,527 | 0.3914  | 0.4343  | 0.1999   |
+| Not Selected              | 53,903| 0.0398  | 0.0612  | 0.0647   |
+
+![violin plot](assets/msmarco_score_distribution.png)
+
+Having both answered and well formed answer improves the entailment slightly,
+the differnce is not statistically significant. I set the score cutoff
+for 
+
