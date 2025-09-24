@@ -1,0 +1,48 @@
+base:
+  template: |-
+    {persona_instruction}
+
+    ## Task
+    {task_section}
+
+    ## Scoring Rubric
+    0 — Off-topic and unrelated to the query or unhelpful for any other reason.
+    1 — Related to the query topic but does not address the expressed user need.
+    2 — One of potentially many responses that addresses a broad user need.
+    3 — Directly answers the query and satisfies the need without going off topic.
+
+    ## Response Instructions
+    - JSON Schema: {json_schema}
+
+    ## Query (id={query_id})
+    {query}
+
+    ## Document
+    {doc_section}
+
+    ## Example Response
+    {json_schema_example}
+
+fragments:
+  persona_instruction:
+    default_rater: "You are an AI that assesses how relevant and helpful a document is to the user query."
+    relevance_rater: "You are an AI that assesses how relevant a document is to the user query."
+    helpfulness_rater: "You are an AI that assesses how helpful a document is to the user query."
+
+  doc_section:
+    doc_single: "{doc1}"
+
+  json_schema:
+    score:
+      id: "{query_id}"
+      type: "score"
+      reason: "<brief explanation>"
+      rating: "<integer in {0,1,2,3}>"
+
+  json_schema_example:
+    score_example:
+      id: "query-123"
+      type: "score"
+      reason: "The text is related to the query but doesn't address the question directly."
+      rating: 1
+

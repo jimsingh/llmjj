@@ -1,0 +1,11 @@
+use:
+  persona_instruction: default_rater
+  doc_section: doc_single
+  json_schema: score
+  json_schema_example: score_example
+
+overrides:
+  task_section: "Rate how relevant the passage is to the query."
+  query_id: "abc123"
+  query: "What is YAML?"
+  doc1: "YAML is a human-friendly serialization format."
