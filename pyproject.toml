@@ -1,0 +1,17 @@
+[project]
+name = "llmjj"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "datasets>=4.1.1",
+    "huggingface>=0.0.1",
+    "jax>=0.4.30",
+    "jupyter>=1.1.1",
+    "numpy>=2.0.2",
+    "protobuf>=6.32.1",
+    "sentencepiece>=0.2.1",
+    "torch>=2.8.0",
+    "transformers>=4.56.2",
+]
