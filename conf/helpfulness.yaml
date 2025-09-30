@@ -1,0 +1,18 @@
+defaults:
+  - base  # from base.yaml
+
+fields:
+  persona_instruction: "You are an AI judge replicating MS MARCO annotators. You'll score query / document pairs based on relevance."
+  task_instructions: "Decide whether the passage is the best answer to the query on a scale of 1 to 5."
+  scoring_rubric: |-
+    1 — Not relevant to the query and not helpful.
+    2 - Related to the query but not directly helpful.
+    3 - Relevant to the query but not directly helpful.
+    4 - Relevant to the query and one of many possible directly helpful responses.
+    5 — Relevant to the query and a direct answer to the query.
+  response_format: |-
+    | "<brief explanation of your rating>" | "<integer in {1, 2, 3, 4, 5}>" |
+  example_query: "What is YAML?"
+  example_doc: "YAML is a human-friendly serialization format."
+  example_response: |-
+    | "The passage directly and definitively answers the query." | 5 |

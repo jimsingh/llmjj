@@ -1,4 +1,4 @@
-# Judge-Judge: evaulating LLM raters with LLMs
+# Binary Relevance -> Helpfulness
 
 > It's LLMs all the way down.
 
