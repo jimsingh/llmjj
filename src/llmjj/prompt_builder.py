@@ -1,7 +1,7 @@
 from pprint import pprint
 from pathlib import Path
 from omegaconf import OmegaConf, DictConfig
-from typing import cast
+from typing import cast, Tuple
 
 class PromptBuilder:
     def __init__(self, config_path: str):
@@ -18,10 +18,11 @@ class PromptBuilder:
         
 
     def build(self, example: dict) -> str:
-        """
-        Fill the template with both static fields (from config)
-        and dynamic fields (from example).
-        """
         context = {**self.fields, **example}
         return self.template.format(**context)
 
+    def parse_response(self, raw_output: str) -> Tuple[str, str]:
+        """Convert the raw LLM output into a reason and a label"""
+        clean = raw_output.strip().strip('|')
+        parts = [s.strip().strip('"') for s in clean.split('|') if s.strip()]
+        return parts[0], parts[-1]
